@@ -14,6 +14,10 @@ app.get('/surveys',function(req,res){
 	res.render('survey');
 });
 
+app.get('/menu',function(req,res){
+	res.render('menu');
+});
+
 //Actual service layer -> would be moved into another server
 //once the system was tested correctly at this level
 app.get('/registerUser', function (req, res) {

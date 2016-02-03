@@ -7,7 +7,7 @@ $(document).ready(function(){
 			success: function(resp){
 				console.log(JSON.stringify(resp));
 				if(resp.success){
-					window.location = '/surveys'
+					window.location = '/menu'
 				}
 				else{
 					$('#failLoginAlert').show();
