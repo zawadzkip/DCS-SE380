@@ -1,0 +1,21 @@
+extends layout.jade
+
+block title
+	title Survey
+block append scripts
+	script(src='/js/survey.js')
+	link(rel='stylesheet',href='/css/survey.css')
+block headerBlock
+	h1 Survey Page
+block contentBlock
+	div(id='surveyDiv')
+	div(class = 'alert alert-danger',id='failReqSurveyAlert')
+			//button(class ='close',data-dismiss='alert') X
+			p Could not grab a survey :^(
+	br
+	div(id='footerDiv')
+		button(type='button',class ='btn btn-success',id='submitSurveyBtn') Submit Survey!
+	div(class = 'alert alert-success',id='surveySubmittedAlert')
+			//button(class ='close',data-dismiss='alert') X
+			p Survey submitted successfully :^)
+	br

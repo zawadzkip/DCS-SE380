@@ -1,0 +1,21 @@
+extends layout.jade
+
+block title
+	title Login
+block append scripts
+	script(src='/js/login.js')
+block headerBlock
+	h1 Login Page
+block contentBlock
+	div(class = 'form-group')
+		label(for = 'userLabel') Username:
+		input(type='text',class='form-control' id='userInput')
+	div(class = 'form-group')
+		label(for = 'pwdLabel') Password:
+		input(type='password',class='form-control' id='pwdInput')
+	button(type='button',class ='btn btn-primary',id='loginBtn') Login!
+	br
+	br
+	div(class = 'alert alert-danger',id='failLoginAlert')
+		//button(class ='close',data-dismiss='alert') X
+		p Could not login :^(

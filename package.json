@@ -1,0 +1,24 @@
+{
+  "name": "surveyapp",
+  "version": "1.0.0",
+  "description": "install nodejs\r npm install express",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zawadzkip/DCS-SE380.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zawadzkip/DCS-SE380/issues"
+  },
+  "homepage": "https://github.com/zawadzkip/DCS-SE380#readme"
+}

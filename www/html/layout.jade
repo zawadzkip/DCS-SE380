@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+	head
+		block title
+			title Please set the title
+		block scripts
+			script(src='/jquery/jquery-2.1.4.min.js')
+			script(src='/bootstrap/bootstrap.min.js')
+			link(rel='stylesheet', href='/bootstrap/bootstrap.min.css')
+			link(rel='stylesheet', href='/bootstrap/bootstrap-theme.min.css')
+			link(rel='stylesheet',href='/bootstrap/bootstrap.css')
+			link(rel='stylesheet',href='/css/layout.css')
+	body
+		div(class = 'jumbotron')
+			block headerBlock
+		div(class = 'container')
+			block contentBlock
