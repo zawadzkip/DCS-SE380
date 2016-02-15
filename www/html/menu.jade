@@ -3,14 +3,18 @@ extends layout.jade
 block title
 	title Survey App
 block append scripts
-	script(src='/js/menu.js')
+	script(src='/js/viewmenu.js')
+	link(rel='stylesheet',href='/css/menu.css')
 block headerBlock
 	h1 Survey App
 block contentBlock
-	button(type='button',class ='btn btn-primary',id='reqSurveyBtn') Request a survey
+	button(type='button',class ='btn btn-primary menuBtn',id='reqSurveyBtn') Request a survey
 	br
 	br
-	button(type='button',class ='btn btn-primary',id='viewRewardsBtn') View survey rewards
+	button(type='button',class ='btn btn-primary menuBtn',id='viewRewardsBtn') View survey rewards
 	br
 	br
-	button(type='button',class ='btn btn-primary',id='completeSurveyBtn') Complete a survey
+	button(type='button',class ='btn btn-primary menuBtn',id='completeSurveyBtn') Complete a survey
+	br
+	br
+	button(type='button',class ='btn btn-primary menuBtn',id='viewSurveyResultsBtn') View Survey Results

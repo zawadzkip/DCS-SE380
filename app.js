@@ -5,7 +5,8 @@ app.set('view engine','jade');
 app.set('views','www/html');
 app.use(express.static('www'));
 
-//Serves up the different views
+//Serves up the different views which have the packaged controllers
+//and model information
 app.get('/', function (req, res) {
     res.render('login');
 });
@@ -18,8 +19,13 @@ app.get('/menu',function(req,res){
 	res.render('menu');
 });
 
+app.get('/results',function(req,res){
+	res.render('results');
+})
+
 //Actual service layer -> would be moved into another server
 //once the system was tested correctly at this level
+//(separation of concerns)
 app.get('/registerUser', function (req, res) {
     result = {
         success: true
