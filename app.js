@@ -56,11 +56,23 @@ app.get('/getSurveyRewards', function (req, res) {
 app.get('/viewSurveyResults', function (req, res) {
     result = {
         success: true,
-        surveyResults: ['yes', 'no', 'maybe', 'agree'],
-        survey: {
+        surveyResults: [{
+			text: 'How many carrots do you buy a week?',
+			options: ['0', '1', '2', '3+'],
+			results: [4, 2, 3, 4]
+		},{
+			text: 'Which is your favorite type of carrot?',
+			options:  ['Golden', 'Steamed', 'Raw', 'Nonexistent'],
+			results: [4, 2, 4, 3]
+		},{
+			text: 'If you have to pick between a carrot and another vegetable what would you pick?',
+			options: ['Carrot', 'Other'],
+			results: [5, 8]
+		}],
+        surveys: [{
             name: 'test survey',
             id: 42
-        }
+        }]
     }
     res.send(result);
 });
