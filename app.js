@@ -83,6 +83,10 @@ app.get('/viewSurveyResults', function (req, res) {
 			text: 'If you have to pick between a carrot and another vegetable what would you pick?',
 			options: ['Carrot', 'Other'],
 			results: [5, 8]
+		},{
+			text: 'Carrots are the Best',
+			options: ['True', 'False'],
+			results: [99, 1]
 		}],
         surveys: [{
             name: 'test survey',

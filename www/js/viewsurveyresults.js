@@ -20,13 +20,13 @@ $(document).ready(function(){
 					yAxis: {
 						min: 0,
 						title: {
-							text: 'Rainfall (mm)'
+							text: 'Responses'
 						}
 					},
 					tooltip: {
 						headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 						pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-							'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+							'<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
 						footerFormat: '</table>',
 						shared: true,
 						useHTML: true
@@ -59,13 +59,13 @@ $(document).ready(function(){
 					yAxis: {
 						min: 0,
 						title: {
-							text: 'Rainfall (mm)'
+							text: 'Responses'
 						}
 					},
 					tooltip: {
 						headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 						pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-							'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+							'<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
 						footerFormat: '</table>',
 						shared: true,
 						useHTML: true
@@ -86,7 +86,7 @@ $(document).ready(function(){
 						type: 'column'
 					},
 					title: {
-						text: 'Question 1'
+						text: 'Question 3'
 					},
 					subtitle: {
 						text: resp.surveyResults[2].text
@@ -98,13 +98,13 @@ $(document).ready(function(){
 					yAxis: {
 						min: 0,
 						title: {
-							text: 'Rainfall (mm)'
+							text: 'Responses'
 						}
 					},
 					tooltip: {
 						headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
 						pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-							'<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+							'<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
 						footerFormat: '</table>',
 						shared: true,
 						useHTML: true
@@ -118,6 +118,48 @@ $(document).ready(function(){
 					 series: [{
 						 name: 'Responses',
 						 data: resp.surveyResults[2].results
+					}]
+				});
+				 $('.question4').highcharts({
+					chart: {
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false,
+						type: 'pie'
+					},
+					title: {
+						text: 'Question 4'
+					},
+					subtitle: {
+						text: resp.surveyResults[3].text
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+								style: {
+									color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+								}
+							}
+						}
+					},
+					series: [{
+						name: 'Responses',
+						colorByPoint: true,
+						data: [{
+							name: resp.surveyResults[3].options[0],
+							y: resp.surveyResults[3].results[0]
+						},
+						{
+							name: resp.surveyResults[3].options[1],
+							y: resp.surveyResults[3].results[1]
+						}]
 					}]
 				});
 			});
