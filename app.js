@@ -1,4 +1,5 @@
 var express = require('express');
+var request = require('request');
 var app = express();
 
 app.set('view engine','jade');
@@ -43,7 +44,21 @@ app.get('/submitSurvey', function (req, res) {
     result = {
         success: true
     }
-    res.send(result);
+	//TODO Eventually this would be read from the actual submitted survey info
+	var surveyEndDate = new Date();
+		
+	//TODO Eventually just url encode instead of this
+	var surveyEndStr = ((surveyEndDate).toISOString()).replace(':','%3A');
+	request('http://localhost:8080'+'/registerSurvey?date='+surveyEndStr+'&surveyId=891',function(err,resp,body){
+		
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log(body);
+		}
+	});
+	res.send(result);
 });
 app.get('/getSurveyRewards', function (req, res) {
     result = {

@@ -5,4 +5,9 @@ $(document).ready(function(){
 	$("#viewSurveyResultsBtn").click(function(){
 		window.location = "/results";
 	});
+	$("#submitSurveyBtn").click(function(){
+		$.ajax({
+			url:'/submitSurvey'
+		});
+	});
 });
